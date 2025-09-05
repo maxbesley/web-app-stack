@@ -1,16 +1,20 @@
-# Fresh project
+# Simple Web App Stack
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
 
-### Usage
+## Tech Stack and Requirements
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+- TypeScript
+- Deno
+- Caddy
+- Docker Compose
+- GitHub Actions
 
-Then start the project:
+## Running locally
 
-```
-deno task start
-```
 
-This will watch the project directory and restart as necessary.
+## Deployment
+
+
+## License
+
+This code is made available under the [MIT License](https://opensource.org/licenses/MIT).
