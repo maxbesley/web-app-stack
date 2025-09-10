@@ -11,6 +11,12 @@
 
 ## Running locally
 
+To locally work on and test the website run
+
+```
+cd app
+deno task dev
+```
 
 ## Deployment
 
@@ -19,8 +25,8 @@
 2. In the GitHub repo go to `Settings -> Secrets and variables -> Actions` and
    create the four required repository secrets for the [SSH GitHub Action](https://github.com/appleboy/ssh-action).
 
-3. On the VPS place your Cloudflare Origin CA certificate and private key in
-   `/etc/ssl/certs/certificate.pem` and `/etc/ssl/private/key.pem`, repectively.
+3. On the VPS place your Cloudflare Origin CA certificate and private key in the
+   files `/etc/ssl/certs/certificate.pem` and `/etc/ssl/private/key.pem`, respectively.
 
 4. If needed change the domain name used in the **Caddyfile**.
 
