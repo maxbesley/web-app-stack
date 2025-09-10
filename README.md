@@ -14,18 +14,20 @@
 
 ## Deployment
 
-1. Provision a VPS and install *Docker Compose* on it
+1. Provision a VPS and install **Docker Compose** on it.
 
 2. In the GitHub repo go to `Settings -> Secrets and variables -> Actions` and
-   create the four required repository secrets for the [SSH GitHub Action](https://github.com/appleboy/ssh-action)
+   create the four required repository secrets for the [SSH GitHub Action](https://github.com/appleboy/ssh-action).
 
 3. On the VPS place your Cloudflare Origin CA certificate and private key in
-   `/etc/ssl/certs/certificate.pem` and `/etc/ssl/private/key.pem`, repectively
+   `/etc/ssl/certs/certificate.pem` and `/etc/ssl/private/key.pem`, repectively.
 
-4. If needed change the domain name used in the *Caddyfile*
+4. If needed change the domain name used in the **Caddyfile**.
 
 5. Manually run the "*Build Docker image and push to registry*"
-   and "*Deploy Docker Compose to a VPS*" workflows
+   and "*Deploy Docker Compose to a VPS*" workflows.
+
+6. Test the deployment worked using [curl](https://curl.se) and a web browser.
 
 
 ## License
