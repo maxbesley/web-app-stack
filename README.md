@@ -1,5 +1,16 @@
 # Simple Web App Stack
 
+This codebase provides the skeleton for a full stack web
+application, including a reverse proxy, SSL certificate
+solution, and automatic CI/CD triggered by git activity.
+
+> **NOTE:** The solution here does introduce downtime.
+> This is because the command `docker compose up` does
+> not natively support zero-downtime deployments.
+> To solve this issue we could use the `docker stack deploy`
+> command, or use [Dokku](https://dokku.com) for a
+> solution that is more robust and managed.
+
 
 ## Tech Stack and Requirements
 
@@ -8,6 +19,7 @@
 - [Caddy](https://caddyserver.com)
 - [Docker Compose](https://docs.docker.com/compose)
 - [GitHub Actions](https://github.com/features/actions)
+
 
 ## Running locally
 
@@ -18,7 +30,8 @@ cd app
 deno task dev
 ```
 
-## Deployment
+
+## Deployment Guide
 
 1. Provision a VPS and install **Docker Compose** on it.
 
