@@ -14,9 +14,9 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - $PWD/infra/caddy/Caddyfile:/etc/caddy/Caddyfile
-  app:
-    container_name: web-app
-    image: ghcr.io/maxbesley/web-app
+  deno-app:
+    container_name: deno-app
+    image: ghcr.io/maxbesley/deno-app
   watchtower:
     container_name: watchtower
     image: containrrr/watchtower

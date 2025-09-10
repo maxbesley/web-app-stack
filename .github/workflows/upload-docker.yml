@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: web-app
+  IMAGE_NAME: deno-app
   REGISTRY: ghcr.io
 
 permissions:
