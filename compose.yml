@@ -16,7 +16,7 @@ services:
       - $PWD/infra/caddy/Caddyfile:/etc/caddy/Caddyfile
   app:
     container_name: app
-    image: ghcr.io/maxbesley/fresh-app
+    image: ghcr.io/maxbesley/web-app
   watchtower:
     container_name: watchtower
     image: containrrr/watchtower

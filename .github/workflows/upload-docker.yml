@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: fresh-app
+  IMAGE_NAME: web-app
   REGISTRY: ghcr.io
 
 permissions:

@@ -24,8 +24,8 @@
 
 4. If needed change the domain name used in the Caddyfile
 
-5. Manually run the 'Build Docker image and push to registry' and
-   'Deploy Docker Compose to a VPS' workflows
+5. Manually run the "Build Docker image and push to registry"
+   and "Deploy Docker Compose to a VPS" workflows
 
 
 ## License
