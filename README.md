@@ -4,7 +4,8 @@ This codebase provides the skeleton for a full stack web
 application, including a reverse proxy, SSL certificate
 solution, and automatic CI/CD triggered by git activity.
 
-> **NOTE:** The solution here does introduce downtime.
+> **_NOTE:_**
+> The solution here does introduce downtime.
 > This is because the command `docker compose up` does
 > not natively support zero-downtime deployments.
 > To solve this issue we could use the `docker stack deploy`
