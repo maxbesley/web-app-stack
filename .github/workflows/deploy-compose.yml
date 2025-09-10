@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_DIR: ~/web-app
+  PROJECT_DIR: ~/website
 
 jobs:
   deploy:
