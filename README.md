@@ -24,7 +24,7 @@ solution, and automatic CI/CD triggered by git activity.
 
 ## Running locally
 
-To locally work on and test the website run
+To locally work on and test the website run:
 
 ```
 cd app
