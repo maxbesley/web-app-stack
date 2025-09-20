@@ -1,0 +1,29 @@
+services:
+  caddy:
+    container_name: caddy
+    image: caddy:2.10-alpine
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    volumes:
+      - /etc/ssl/certs:/etc/ssl/certs
+      - /etc/ssl/private:/etc/ssl/private
+      - caddy_data:/data
+      - caddy_config:/config
+      - $PWD/infra/caddy/Caddyfile:/etc/caddy/Caddyfile
+  deno-app:
+    container_name: deno-app
+    image: ghcr.io/maxbesley/deno-app
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 120 --cleanup
+
+volumes:
+  caddy_data:
+  caddy_config:

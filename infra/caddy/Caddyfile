@@ -1,0 +1,8 @@
+maxbesley.com {
+  tls /etc/ssl/certs/certificate.pem /etc/ssl/private/key.pem  # Cloudflare Origin CA certificate
+  reverse_proxy deno-app:9000
+}
+
+www.maxbesley.com {
+  redir https://maxbesley.com{uri}
+}

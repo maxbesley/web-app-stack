@@ -1,0 +1,52 @@
+name: Deploy Docker Compose to a VPS
+
+on:
+  push:
+    branches: main
+    paths:
+      - compose.yml
+      - infra/caddy/Caddyfile
+  workflow_dispatch:
+
+env:
+  PROJECT_DIR: ~/website
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy over Caddyfile via SSH
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          source: infra/caddy/Caddyfile
+          target: ${{ env.PROJECT_DIR }}
+
+      - name: Copy over compose.yml via SSH
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          source: compose.yml
+          target: ${{ env.PROJECT_DIR }}
+
+      - name: Deploy with Docker Compose
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            cd ${{ env.PROJECT_DIR }}
+            docker compose up --detach
+

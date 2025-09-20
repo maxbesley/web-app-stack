@@ -1,0 +1,9 @@
+# dotenv environment variable files
+app/.env
+app/.env.development.local
+app/.env.test.local
+app/.env.production.local
+app/.env.local
+
+# npm dependencies
+app/node_modules/
